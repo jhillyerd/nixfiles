@@ -39,6 +39,7 @@ with lib;
         gnumake
         jq
         lsof
+        lynx
         ncat
         patchelf
         python3
@@ -68,7 +69,10 @@ with lib;
     inconsolata
   ];
 
+  # Programs and Services
   programs.fish.enable = true;
+
+  services.sshd.enable = true;
 
   virtualisation.docker.enable = true;
 
