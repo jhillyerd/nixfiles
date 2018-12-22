@@ -7,15 +7,19 @@
       ./common.nix
     ];
 
-  # FIXME: UUID detection is currently broken
   boot.loader.grub = {
     enable = true;
     version = 2;
     device = "/dev/sda";
+    # UUID detection is currently broken
     fsIdentifier = "provided";
   };
   boot.initrd.checkJournalingFS = false;
   boot.growPartition = true;
+
+  fileSystems."/" = {
+    autoResize = true;
+  };
 
   networking.hostName = "nixvbox";
   powerManagement.enable = false;
