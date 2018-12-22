@@ -1,0 +1,9 @@
+# Credentials live here
+secrets/
+
+# Produce your own config files in hosts/ and use the ln-host script.
+configuration.nix
+hardware-configuration.nix
+
+# Misc
+tags
