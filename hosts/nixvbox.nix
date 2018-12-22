@@ -29,7 +29,6 @@
     enable = true;
     dpi = 108;
     layout = "us";
-    xkbOptions = "eurosign:e";
     windowManager.i3.enable = true;
   };
 }
