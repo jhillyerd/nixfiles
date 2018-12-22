@@ -14,10 +14,10 @@
   };
 
   networking = {
+    useDHCP = false;
     defaultGateway = "192.168.1.1";
     hostName = "cubi";
     nameservers = [ "8.8.8.8" ];
-    useDHCP = false;
   };
   networking.interfaces.enp2s0.ipv4.addresses = [
     {
@@ -25,6 +25,7 @@
       prefixLength = 24;
     }
   ];
+  networking.firewall.enable = false;
 
   services.fstrim.enable = true;
 }
