@@ -60,7 +60,9 @@ with lib;
         x-www-browser
       ];
 
-      noxorg = [];
+      noxorg = [
+        rxvt_unicode.terminfo
+      ];
       
     in common ++ (if config.services.xserver.enable then xorg else noxorg);
 
@@ -75,6 +77,12 @@ with lib;
   services.sshd.enable = true;
 
   virtualisation.docker.enable = true;
+
+  # Environment
+  environment.sessionVariables = {
+    # Workaround for fish: https://github.com/NixOS/nixpkgs/issues/36146
+    TERMINFO_DIRS = "/run/current-system/sw/share/terminfo";
+  };
 
   # Users
   users.mutableUsers = true;
