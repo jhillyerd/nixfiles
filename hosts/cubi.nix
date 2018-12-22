@@ -12,8 +12,6 @@
     version = 2;
     device = "/dev/sda";
   };
-  boot.initrd.checkJournalingFS = false;
-  boot.growPartition = true;
 
   networking = {
     defaultGateway = "192.168.1.1";
@@ -28,5 +26,5 @@
     }
   ];
 
-  powerManagement.enable = true;
+  services.fstrim.enable = true;
 }
