@@ -28,6 +28,10 @@ with lib;
         pkgs.writeShellScriptBin "x-www-browser" ''
           exec ${pkgs.google-chrome}/bin/google-chrome-stable "$@"
         '';
+      vim-is-neovim =
+        pkgs.writeShellScriptBin "vim" ''
+          exec ${pkgs.neovim}/bin/nvim "$@"
+        '';
 
       common = [
         bind
@@ -41,13 +45,14 @@ with lib;
         lsof
         lynx
         ncat
+        neovim
         patchelf
         python3
         tmux
         tree
         universal-ctags
         unzip
-        vimHugeX
+        vim-is-neovim
         weechat
         wget
         zip
@@ -63,7 +68,7 @@ with lib;
       noxorg = [
         rxvt_unicode.terminfo
       ];
-      
+
     in common ++ (if config.services.xserver.enable then xorg else noxorg);
 
   fonts.fonts = with pkgs; [
