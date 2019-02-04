@@ -18,9 +18,9 @@
   i18n.consoleFont = "${pkgs.terminus_font}/share/consolefonts/ter-728n.psf.gz";
 
   networking.hostName = "zen";
-  networking.wireless.enable = true;
-  networking.supplicant.WLAN = {
-    configFile.path = "/etc/wpa_supplicant.conf";
+  networking.wireless = {
+    enable = true;
+    interfaces = [ "wlp2s0" ];
   };
 
   # Enable sound.
@@ -30,6 +30,7 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
+    enableCtrlAltBackspace = true;
     layout = "us";
     dpi = 160;
     libinput = {
