@@ -14,6 +14,9 @@
 
   networking.hostName = "zen";
   networking.wireless.enable = true;
+  networking.supplicant.WLAN = {
+    configFile.path = "/etc/wpa_supplicant.conf";
+  };
 
   # Enable sound.
   sound.enable = true;
@@ -23,6 +26,7 @@
   services.xserver = {
     enable = true;
     layout = "us";
+    dpi = 144;
     libinput.enable = true;
     windowManager.i3.enable = true;
   };

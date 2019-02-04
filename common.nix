@@ -58,18 +58,19 @@ with lib;
         zip
       ];
 
-      xorg = [
+      withxorg = [
         firefox
         google-chrome
         rxvt_unicode-with-plugins
         x-www-browser
+        xorg.xdpyinfo
       ];
 
       noxorg = [
         rxvt_unicode.terminfo
       ];
 
-    in common ++ (if config.services.xserver.enable then xorg else noxorg);
+    in common ++ (if config.services.xserver.enable then withxorg else noxorg);
 
   fonts.fonts = with pkgs; [
     font-droid
