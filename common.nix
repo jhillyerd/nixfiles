@@ -63,6 +63,7 @@ with lib;
         google-chrome
         rxvt_unicode-with-plugins
         x-www-browser
+        xautolock
         xorg.xdpyinfo
       ];
 
@@ -75,6 +76,7 @@ with lib;
   fonts.fonts = with pkgs; [
     font-droid
     inconsolata
+    terminus_font
   ];
 
   # Programs and Services
