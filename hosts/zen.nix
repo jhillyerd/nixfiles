@@ -35,6 +35,7 @@
     dpi = 160;
     libinput = {
       enable = true;
+      accelSpeed = "0.25";
       naturalScrolling = true;
     };
     windowManager.i3.enable = true;
