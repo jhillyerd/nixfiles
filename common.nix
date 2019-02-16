@@ -65,6 +65,7 @@ with lib;
         x-www-browser
         xautolock
         xorg.xdpyinfo
+        xorg.xev
       ];
 
       noxorg = [
