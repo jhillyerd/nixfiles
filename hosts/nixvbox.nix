@@ -21,12 +21,13 @@
     autoResize = true;
   };
 
-  networking.hostName = "nixvbox";
-  powerManagement.enable = false;
-
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  powerManagement.enable = false;
+
+  networking.hostName = "nixvbox";
+  networking.firewall.enable = false;
 
   # Enable the X11 windowing system.
   services.xserver = {
