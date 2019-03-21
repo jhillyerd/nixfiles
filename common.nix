@@ -84,6 +84,7 @@ with lib;
   # Programs and Services
   programs.fish.enable = true;
 
+  services.nfs.server.enable = true;
   services.sshd.enable = true;
 
   virtualisation.docker.enable = true;
