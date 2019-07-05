@@ -61,7 +61,7 @@ with lib;
       withxorg = [
         firefox
         google-chrome
-        elementary-icon-theme
+        pantheon.elementary-icon-theme
         rxvt_unicode-with-plugins
         x-www-browser
         xautolock
@@ -76,8 +76,8 @@ with lib;
     in common ++ (if config.services.xserver.enable then withxorg else noxorg);
 
   fonts.fonts = with pkgs; [
-    font-droid
     inconsolata
+    noto-fonts
     terminus_font
   ];
 
