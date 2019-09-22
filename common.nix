@@ -61,6 +61,7 @@ with lib;
       withxorg = [
         firefox
         google-chrome
+        imwheel
         pantheon.elementary-icon-theme
         rxvt_unicode-with-plugins
         x-www-browser
