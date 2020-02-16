@@ -35,6 +35,7 @@ with lib;
 
       common = [
         bind
+        chezmoi
         docker
         file
         git
