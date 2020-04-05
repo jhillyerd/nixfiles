@@ -8,7 +8,10 @@ with lib;
   system.stateVersion = "19.09"; # Did you read the comment?
 
   # Collect nix store garbage and optimise daily.
-  nix.gc.automatic = true;
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 14d";
+  };
   nix.optimise.automatic = true;
 
   time.timeZone = "US/Pacific";
@@ -47,6 +50,7 @@ with lib;
         lynx
         ncat
         neovim
+        nodejs
         patchelf
         python3
         tmux
