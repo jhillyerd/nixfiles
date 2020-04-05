@@ -69,6 +69,7 @@ with lib;
         imwheel
         pantheon.elementary-icon-theme
         rxvt_unicode-with-plugins
+        scrot
         x-www-browser
         xautolock
         xorg.xdpyinfo
