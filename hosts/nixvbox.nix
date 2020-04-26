@@ -36,4 +36,6 @@
     layout = "us";
     windowManager.i3.enable = true;
   };
+
+  virtualisation.libvirtd.enable = true;
 }

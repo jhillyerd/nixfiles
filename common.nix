@@ -111,7 +111,7 @@ with lib;
     isNormalUser = true;
     home = "/home/james";
     description = "James Hillyerd";
-    extraGroups = [ "audio" "docker" "networkmanager" "vboxsf" "wheel" ];
+    extraGroups = [ "audio" "docker" "libvirtd" "networkmanager" "vboxsf" "wheel" ];
     shell = pkgs.fish;
     initialPassword = "hello github";
   };
