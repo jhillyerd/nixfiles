@@ -21,4 +21,6 @@
   networking.firewall.enable = false;
 
   services.fstrim.enable = true;
+
+  virtualisation.libvirtd.enable = true;
 }
