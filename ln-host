@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
+set -eo pipefail
 
-HOST=`hostname`
+host=`hostname`
 if [[ ! -z "$1" ]]; then
-  HOST=$1
+  host=$1
 fi
 
-if [[ ! -e "hosts/$HOST.nix" ]] || [[ ! -e "hosts/$HOST-hardware.nix" ]]; then
-  echo "missing $HOST.nix or $HOST-hardware.nix" >&2
+if [[ ! -e "hosts/$host.nix" ]] || [[ ! -e "hosts/$host-hardware.nix" ]]; then
+  echo "missing $host.nix or $host-hardware.nix" >&2
   exit 1
 fi
 
-ln -f "hosts/$HOST.nix"          configuration.nix
-ln -f "hosts/$HOST-hardware.nix" hardware-configuration.nix
+ln -f -v "hosts/$host.nix" configuration.nix
+ln -f -v "hosts/$host-hardware.nix" hardware-configuration.nix
