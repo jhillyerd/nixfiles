@@ -18,10 +18,12 @@
   hardware.pulseaudio.enable = true;
   powerManagement.enable = false;
 
-  networking.hostName = "nixvm";
-  networking.useDHCP = false;
-  networking.interfaces.ens33.useDHCP = true;
-  networking.firewall.enable = false;
+  networking = {
+    hostName = "nixvm";
+    useDHCP = false;
+    interfaces.ens33.useDHCP = true;
+    firewall.enable = false;
+  };
 
   # Enable the X11 windowing system.
   services.xserver = {
@@ -32,5 +34,5 @@
   };
 
   virtualisation.libvirtd.enable = true;
+  virtualisation.vmware.guest.enable = true;
 }
-

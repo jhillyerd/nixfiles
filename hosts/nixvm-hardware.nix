@@ -4,21 +4,15 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ];
-
   boot.initrd.availableKernelModules = [ "ata_piix" "mptspi" "uhci_hcd" "ehci_pci" "sd_mod" "sr_mod" ];
-  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/67df16ec-c408-4328-afd0-e5626924a67e";
+    { device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/e0738623-acfb-4337-87bb-f8b28b4fab8b"; }
-    ];
+  swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
   nix.maxJobs = lib.mkDefault 4;
 }
