@@ -9,23 +9,25 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "sd_mod" ];
+  boot.initrd.kernelModules = [ "md_mod" "raid0" "efivars" ]; # Intel RAID
   boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot.kernelParams = [ "acpi_osi=" ]; # Enable screen brightness
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/957de59c-e067-4832-a985-70be3d1ed3f8";
+    { device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/5CF7-B892";
+    { device = "/dev/disk/by-label/boot";
       fsType = "vfat";
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/cb2c6128-8912-401e-ac74-d94351f14356"; }
-    ];
+  swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
   nix.maxJobs = lib.mkDefault 4;
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+
+  # High-DPI console
+  console.font = lib.mkDefault "${pkgs.terminus_font}/share/consolefonts/ter-u28n.psf.gz";
 }
