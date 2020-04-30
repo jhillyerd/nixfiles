@@ -1,5 +1,5 @@
 #! /usr/bin/env nix-shell
-#! nix-shell -i fish -p fish git go neovim
+#! nix-shell -i fish -p chezmoi fish git neovim
 #
 # setup-home
 
@@ -14,8 +14,7 @@ set VIM $HOME/.vim
 
 stage "Setup"
 cd $HOME
-mkdir -p .local/share devel go
-set -x GOPATH $HOME/go
+mkdir -p .local/share devel
 
 stage "Cloning configs"
 git clone https://github.com/jhillyerd/dotfiles $CHEZMOI
@@ -23,8 +22,7 @@ git clone https://github.com/jhillyerd/dotvim $VIM
 
 stage "Chezmoi"
 chmod 0700 $CHEZMOI
-go get -v github.com/twpayne/chezmoi
-eval $GOPATH/bin/chezmoi apply
+chezmoi apply
 
 stage "Neovim"
 mkdir -p "$VIM"
