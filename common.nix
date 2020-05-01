@@ -41,6 +41,7 @@ with lib;
         chezmoi
         docker
         file
+        fzf
         git
         gitAndTools.gitflow
         gcc
