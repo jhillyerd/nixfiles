@@ -53,7 +53,7 @@ with lib;
         neovim
         nodejs
         patchelf
-        pstree
+        psmisc
         python3
         tmux
         tree
