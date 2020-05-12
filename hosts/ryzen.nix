@@ -8,8 +8,11 @@
     ];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    systemd-boot.enable = true;
+    timeout = 10;
+  };
 
   networking.hostName = "ryzen"; # Define your hostname.
 
