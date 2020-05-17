@@ -73,6 +73,7 @@ with lib;
         polybarFull
         rxvt_unicode-with-plugins
         scrot
+        sxhkd
         x-www-browser
         xautolock
         xorg.xdpyinfo
