@@ -30,7 +30,7 @@
     enable = true;
     dpi = 108;
     layout = "us";
-    windowManager.i3.enable = true;
+    windowManager.bspwm.enable = true;
   };
 
   virtualisation.libvirtd.enable = true;

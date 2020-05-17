@@ -66,7 +66,9 @@ with lib;
       ];
 
       withxorg = [
+        dmenu
         firefox
+        gnome3.gedit
         google-chrome
         imwheel
         pantheon.elementary-icon-theme
