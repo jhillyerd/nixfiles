@@ -70,6 +70,7 @@ with lib;
         google-chrome
         imwheel
         pantheon.elementary-icon-theme
+        polybarFull
         rxvt_unicode-with-plugins
         scrot
         x-www-browser
@@ -87,7 +88,9 @@ with lib;
   fonts.fonts = with pkgs; [
     inconsolata
     noto-fonts
+    siji
     terminus_font
+    unifont
   ];
 
   # Programs and Services
