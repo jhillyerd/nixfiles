@@ -12,6 +12,7 @@
     version = 2;
     device = "/dev/sda";
   };
+  boot.kernelParams = [ "kvm.ignore_msrs=1" ];
 
   # Enable sound.
   sound.enable = true;
