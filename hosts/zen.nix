@@ -37,6 +37,6 @@
       accelSpeed = "0.40";
       naturalScrolling = true;
     };
-    windowManager.i3.enable = true;
+    windowManager.bspwm.enable = true;
   };
 }
