@@ -76,6 +76,7 @@ with lib;
         rxvt_unicode-with-plugins
         scrot
         sxhkd
+        termite
         x-www-browser
         xautolock
         xorg.xdpyinfo
