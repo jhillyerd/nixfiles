@@ -81,6 +81,7 @@ with lib;
         xautolock
         xorg.xdpyinfo
         xorg.xev
+        xsecurelock
       ];
 
       noxorg = [
