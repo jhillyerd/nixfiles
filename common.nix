@@ -78,10 +78,10 @@ with lib;
         sxhkd
         termite
         x-www-browser
-        xautolock
         xorg.xdpyinfo
         xorg.xev
         xsecurelock
+        xss-lock
       ];
 
       noxorg = [
