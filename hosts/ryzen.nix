@@ -28,7 +28,6 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    dpi = 108;
     layout = "us";
     windowManager.bspwm.enable = true;
   };
