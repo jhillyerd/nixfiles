@@ -14,7 +14,7 @@ with lib;
   };
   nix.optimise.automatic = true;
 
-  time.timeZone = "US/Pacific";
+  time.timeZone = "America/Los_Angeles";
 
   security.sudo = {
     enable = true;
@@ -101,7 +101,6 @@ with lib;
   # Programs and Services
   programs.fish.enable = true;
 
-  services.nfs.server.enable = true;
   services.sshd.enable = true;
 
   virtualisation.docker.enable = true;
