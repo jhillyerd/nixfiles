@@ -43,6 +43,7 @@ with lib;
         file
         fzf
         git
+        gitAndTools.gh
         gitAndTools.gitflow
         gcc
         gnumake
@@ -51,10 +52,12 @@ with lib;
         lynx
         ncat
         neovim
-        nodejs
+        nodejs-12_x
         patchelf
         psmisc
         python3
+        ripgrep
+        starship
         tmux
         tree
         universal-ctags
