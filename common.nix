@@ -62,6 +62,7 @@ with lib;
         tree
         universal-ctags
         unzip
+        usbutils
         vim-is-neovim
         weechat
         wget
@@ -106,6 +107,15 @@ with lib;
 
   services.sshd.enable = true;
 
+  services.udev.extraRules = ''
+    ACTION!="add|change", GOTO="probe_rs_rules_end"
+    SUBSYSTEM=="gpio", MODE="0660", GROUP="dialout", TAG+="uaccess"
+    SUBSYSTEM!="usb|tty|hidraw", GOTO="probe_rs_rules_end"
+    # STMicroelectronics ST-LINK/V2
+    ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", MODE="660", GROUP="dialout", TAG+="uaccess"
+    LABEL="probe_rs_rules_end"
+  '';
+
   virtualisation.docker.enable = true;
 
   # Environment
@@ -122,7 +132,7 @@ with lib;
     isNormalUser = true;
     home = "/home/james";
     description = "James Hillyerd";
-    extraGroups = [ "audio" "docker" "libvirtd" "networkmanager" "vboxsf" "wheel" ];
+    extraGroups = [ "audio" "dialout" "docker" "libvirtd" "networkmanager" "vboxsf" "wheel" ];
     shell = pkgs.fish;
     initialPassword = "hello github";
   };
