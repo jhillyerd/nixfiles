@@ -13,12 +13,20 @@
     device = "/dev/sda";
   };
 
+  # Enable nix flakes, not yet stable.
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   networking = {
     useDHCP = false;
     hostName = "cubi";
+    interfaces.enp2s0.useDHCP = true;
+    firewall.enable = false;
   };
-  networking.interfaces.enp2s0.useDHCP = true;
-  networking.firewall.enable = false;
 
   services.fstrim.enable = true;
 
