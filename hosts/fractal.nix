@@ -14,12 +14,20 @@
     timeout = 10;
   };
 
-  networking.hostName = "fractal"; # Define your hostname.
+  # Enable nix flakes, not yet stable.
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
 
-  networking.useDHCP = false;
-  networking.interfaces.enp4s0.useDHCP = true;
-
-  networking.firewall.enable = false;
+  networking = {
+    useDHCP = false;
+    hostName = "fractal";
+    interfaces.enp4s0.useDHCP = true;
+    firewall.enable = false;
+  };
 
   services.fstrim.enable = true;
 
