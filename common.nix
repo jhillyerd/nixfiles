@@ -37,6 +37,7 @@ with lib;
         '';
 
       common = [
+        bat
         bind
         chezmoi
         docker
@@ -47,12 +48,13 @@ with lib;
         gitAndTools.gitflow
         gcc
         gnumake
+        htop
         jq
         lsof
         lynx
         ncat
         neovim
-        nodejs-12_x
+        nodejs
         patchelf
         psmisc
         python3
