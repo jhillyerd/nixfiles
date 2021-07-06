@@ -29,7 +29,10 @@
     firewall.enable = false;
   };
 
-  services.fstrim.enable = true;
+  services = {
+    fstrim.enable = true;
+    tailscale.enable = true;
+  };
 
   virtualisation.libvirtd.enable = true;
 }
