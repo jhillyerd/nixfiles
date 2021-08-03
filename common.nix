@@ -45,6 +45,7 @@ with lib;
         fzf
         git
         gitAndTools.gh
+        gitAndTools.git-absorb
         gitAndTools.gitflow
         gcc
         gnumake
