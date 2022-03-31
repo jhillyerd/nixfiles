@@ -14,12 +14,15 @@
     timeout = 10;
   };
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   # Enable nix flakes, not yet stable.
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
+    trustedUsers = [ "root" "james" ];
   };
 
   networking = {
