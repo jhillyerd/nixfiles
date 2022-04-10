@@ -11,8 +11,18 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "hypernix"; # Define your hostname.
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
+  # Enable nix flakes, not yet stable.
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+    trustedUsers = [ "root" "james" ];
+  };
+
+  networking.hostName = "hypernix"; # Define your hostname.
   networking.useDHCP = false;
   networking.interfaces.eth0.useDHCP = true;
 
@@ -20,6 +30,8 @@
   services.openssh.enable = true;
 
   networking.firewall.enable = false;
+
+  virtualisation.hypervGuest.enable = true;
 
   system.stateVersion = "21.11"; # Did you read the comment?
 }
