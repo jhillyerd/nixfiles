@@ -1,11 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./common.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./common.nix
+  ];
 
   boot.loader.grub = {
     enable = true;
@@ -17,9 +16,7 @@
   boot.initrd.checkJournalingFS = false;
   boot.growPartition = true;
 
-  fileSystems."/" = {
-    autoResize = true;
-  };
+  fileSystems."/" = { autoResize = true; };
 
   # Enable sound.
   sound.enable = true;
