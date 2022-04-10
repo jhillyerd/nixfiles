@@ -49,6 +49,7 @@ with lib;
         lynx
         ncat
         neovim
+        nixfmt
         nodejs
         patchelf
         psmisc
