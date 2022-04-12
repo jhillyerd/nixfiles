@@ -73,12 +73,12 @@ with lib;
         gnome3.gedit
         google-chrome
         imwheel
+        kitty
         pantheon.elementary-icon-theme
         polybarFull
         rxvt_unicode-with-plugins
         scrot
         sxhkd
-        termite
         x-www-browser
         xorg.xdpyinfo
         xorg.xev

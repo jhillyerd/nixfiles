@@ -32,9 +32,20 @@
   services = {
     fstrim.enable = true;
     tailscale.enable = true;
+
+    # Enable the X11 windowing system.
+    xserver = {
+      enable = true;
+      layout = "us";
+      windowManager.i3.enable = true;
+    };
   };
+
+  # Enable sound.
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   virtualisation.libvirtd.enable = true;
 
-  system.stateVersion = "20.09"; # Did you read the comment?
+  system.stateVersion = "21.11"; # Did you read the comment?
 }
