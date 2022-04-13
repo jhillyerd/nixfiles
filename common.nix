@@ -77,6 +77,7 @@ with lib;
         pantheon.elementary-icon-theme
         polybarFull
         rxvt_unicode-with-plugins
+        virt-manager
         scrot
         sxhkd
         x-www-browser
@@ -91,6 +92,8 @@ with lib;
       ];
 
     in common ++ (if config.services.xserver.enable then withxorg else noxorg);
+
+  programs.dconf.enable = config.services.xserver.enable;
 
   fonts.fonts = with pkgs; [
     inconsolata
