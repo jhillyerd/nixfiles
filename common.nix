@@ -45,6 +45,7 @@ with lib;
         gnumake
         htop
         jq
+        lazygit
         lsof
         lynx
         ncat
